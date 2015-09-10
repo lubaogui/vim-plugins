@@ -6,7 +6,7 @@ bundlePath=$basePath/vim/bundle
 echo $basePath
 echo $bundlePath
 
-//if bundle directory does not exist, create it!
+#if bundle directory does not exist, create it!
 if [ ! -d $bundlePath ]; then
     mkdir -p $bundlePath
 fi
