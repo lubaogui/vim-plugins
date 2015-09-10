@@ -6,6 +6,11 @@ bundlePath=$basePath/vim/bundle
 echo $basePath
 echo $bundlePath
 
+//if bundle directory does not exist, create it!
+if [ ! -d $bundlePath ]; then
+    mkdir -p $bundlePath
+fi
+
 echo "entering working path!"
 
 plugins=$(find $bundlePath -maxdepth 1 -mindepth 1 -type d)
