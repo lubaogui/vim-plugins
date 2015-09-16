@@ -17,7 +17,12 @@ set expandtab
 "颜色方案
 set t_Co=256
 colorscheme desert
-set colorcolumn=120
+
+"version > 740 open colorcolumn
+if v:version > 740
+    set colorcolumn=120
+    finish
+endif
 
 "鼠标所在行高亮
 set cursorline
