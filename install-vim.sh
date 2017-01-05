@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 currentPath=$(pwd)
 basePath=$(cd $(dirname $0) && pwd)
@@ -26,7 +26,7 @@ if [ "$plugins" != "" ]; then
 for plugin in $plugins ; do
     echo "update plugin  $plugin"
     cd $plugin && git pull
-    lastModifiyTime=$(date +%s -r $plugin)
+    lastModifiyTime=$(stat -x -t %s $plugin |grep Modify |awk '{print $2}')
     if [ $lastModifiyTime -gt $startTime ];then
         updateFlag=1
     fi
