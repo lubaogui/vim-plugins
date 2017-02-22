@@ -49,6 +49,7 @@ autocmd filetype php set dictionary+=~/.vim/bundle/vim-dict/dict/php.dic
 
 "nerdTree插件设置
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
